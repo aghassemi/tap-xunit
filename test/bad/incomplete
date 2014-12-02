@@ -1,0 +1,3 @@
+TAP version 13
+# single-pass
+ok 1 should be equal

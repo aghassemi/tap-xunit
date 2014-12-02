@@ -24,5 +24,15 @@
   "bugs": {
     "url": "https://github.com/aghassemi/tap-xunit/issues"
   },
-  "homepage": "https://github.com/aghassemi/tap-xunit"
+  "homepage": "https://github.com/aghassemi/tap-xunit",
+  "devDependencies": {
+    "tape": "~3.0.3",
+    "concat-stream": "~1.4.7"
+  },
+  "dependencies": {
+    "through2": "~0.6.3",
+    "xmlbuilder": "~2.4.5",
+    "duplexer": "~0.1.1",
+    "tap-parser": "~0.7.0"
+  }
 }
