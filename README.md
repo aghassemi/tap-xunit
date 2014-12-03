@@ -15,7 +15,7 @@ node test.js | tap-xunit
 #Installation
 
 ```
-npm install tap-xunit
+npm install tap-xunit -g
 ```
 
 #Usage
