@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="single failure" tests="1" failures="1" errors="0">
+    <testcase name="#1 (unnamed assert)">
+      <failure>
+          ---
+            operator: ok
+            expected: true
+            actual:   false
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:4:7)
+          ...
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>

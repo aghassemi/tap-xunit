@@ -1,5 +1,5 @@
 TAP version 13
-# single-pass
+# single pass
 ok 1 should be equal
 
 1..1

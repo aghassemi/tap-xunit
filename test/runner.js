@@ -17,12 +17,11 @@ function runGoodInputTests() {
 
   // tape does not support adding test() async, so we need to read the dir sync
   var testFiles = fs.readdirSync(INPUT_DIR);
-  for (var i = 0; i < testFiles.length; i++) {
-    var filename = testFiles[i];
+  testFiles.forEach(function(filename) {
     test(filename, function(assert) {
       runTest(filename, assert);
     });
-  }
+  });
 
   function runTest(filename, assert) {
     readTestFiles(filename, function(inputStream, expected) {
@@ -36,7 +35,7 @@ function runGoodInputTests() {
 
       function verifyResults(output) {
         output = output.toString();
-        assert.deepEqual(output, expected, 'input/output match');
+        assert.deepEqual(output.trim(), expected.trim(), 'input/output match');
         assert.end();
       }
     });

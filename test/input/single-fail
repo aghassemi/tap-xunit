@@ -1,0 +1,14 @@
+TAP version 13
+# single failure
+not ok 1 (unnamed assert)
+  ---
+    operator: ok
+    expected: true
+    actual:   false
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:4:7)
+  ...
+
+1..1
+# tests 1
+# pass  0
+# fail  1

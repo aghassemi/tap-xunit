@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+var converter = require('../lib/converter.js');
+
+var tapToxUnitConverter = converter();
+
+process.stdin.pipe(tapToxUnitConverter).pipe(process.stdout);
