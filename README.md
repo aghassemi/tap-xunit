@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/aghassemi/tap-xunit.png)](https://travis-ci.org/aghassemi/tap-xunit)
+
 tap-xunit
 =========
 
