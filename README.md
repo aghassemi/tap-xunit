@@ -1,4 +1,4 @@
 tap-xunit
 =========
 
-TAP to xUnit XML adapter
+TAP to xUnit XML converter

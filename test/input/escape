@@ -1,0 +1,59 @@
+TAP version 13
+# escape
+ok 1 1..2
+not ok 2 Error: 1..2
+  ---
+    operator: error
+    expected: undefined
+    actual:   {}
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:5:5)
+    stack:
+      Error: 1..2
+        at Test.<anonymous> (/Users/aghassemi/github/tape/test.js:5:11)
+        at Test.bound [as _cb] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+        at Test.run (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:72:10)
+        at Test.bound [as run] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+        at Object.next [as _onImmediate] (/Users/aghassemi/github/tape/node_modules/tape/lib/results.js:66:15)
+        at processImmediate [as _immediateCallback] (timers.js:330:15)
+  ...
+ok 3 # NotAComment
+not ok 4 Error: # NotAComment
+  ---
+    operator: error
+    expected: undefined
+    actual:   {}
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:8:5)
+    stack:
+      Error: # NotAComment
+        at Test.<anonymous> (/Users/aghassemi/github/tape/test.js:8:11)
+        at Test.bound [as _cb] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+        at Test.run (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:72:10)
+        at Test.bound [as run] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+        at Object.next [as _onImmediate] (/Users/aghassemi/github/tape/node_modules/tape/lib/results.js:66:15)
+        at processImmediate [as _immediateCallback] (timers.js:330:15)
+  ...
+ok 5  --- Not Extra ...
+not ok 6 Error: --- Not Extra ...
+  ---
+    operator: error
+    expected: undefined
+    actual:   {}
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:11:5)
+    stack:
+      Error:
+    ---
+     Not Extra
+    ...
+
+        at Test.<anonymous> (/Users/aghassemi/github/tape/test.js:11:11)
+        at Test.bound [as _cb] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+        at Test.run (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:72:10)
+        at Test.bound [as run] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+        at Object.next [as _onImmediate] (/Users/aghassemi/github/tape/node_modules/tape/lib/results.js:66:15)
+        at processImmediate [as _immediateCallback] (timers.js:330:15)
+  ...
+
+1..6
+# tests 6
+# pass  3
+# fail  3

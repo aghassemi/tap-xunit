@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="outofplace-extras" tests="4" failures="2" errors="0">
+    <testcase name="#1 failing no extra">
+      <failure/>
+    </testcase>
+    <testcase name="#2 passing with extra"/>
+    <testcase name="#3 passing no extra"/>
+    <testcase name="#4 failing with extra">
+      <failure>
+          ---
+            operator: ok
+            expected: true
+            actual:   false
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:6:5)
+          ...
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,23 @@
+TAP version 13
+# skipped
+ok 1 passing and not skipped
+ok 2 passing but skipped # SKIP
+not ok 3 failing but skipped # SKIP
+  ---
+    operator: ok
+    expected: true
+    actual:   false
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:6:5)
+  ...
+not ok 4 failing and not skipped
+  ---
+    operator: ok
+    expected: true
+    actual:   false
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:7:5)
+  ...
+
+1..4
+# tests 4
+# pass  2
+# fail  2

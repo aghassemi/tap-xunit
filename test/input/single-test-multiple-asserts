@@ -1,0 +1,15 @@
+TAP version 13
+# single-test-mutiple-asserts
+ok 1 Should be okay
+ok 2 should be equal
+not ok 3 Oh no!
+  ---
+    operator: fail
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:6:5)
+  ...
+ok 4 Oh yeah!
+
+1..4
+# tests 4
+# pass  3
+# fail  1

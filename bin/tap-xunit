@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
+var argv = require('minimist')(process.argv.slice(2));
 var converter = require('../lib/converter.js');
 
-var tapToxUnitConverter = converter();
-
+var tapToxUnitConverter = converter(argv);
 process.stdin.pipe(tapToxUnitConverter).pipe(process.stdout);

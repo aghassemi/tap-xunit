@@ -1,0 +1,20 @@
+TAP version 13
+# outofplace-extras
+not ok 1 failing no extra
+ok 2 passing with extra
+  ---
+    passing with extra. should not show up anywhere in xunit
+  ...
+ok 3 passing no extra
+not ok 4 failing with extra
+  ---
+    operator: ok
+    expected: true
+    actual:   false
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:6:5)
+  ...
+
+1..4
+# tests 4
+# pass  2
+# fail  2

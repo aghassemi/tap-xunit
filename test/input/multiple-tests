@@ -1,0 +1,39 @@
+TAP version 13
+# single-tests #1 all pass
+ok 1 True that
+ok 2 foo() == bar()
+# single-tests #2 all fail
+not ok 3 True that
+  ---
+    operator: notOk
+    expected: false
+    actual:   true
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:11:5)
+  ...
+not ok 4 should be equal
+  ---
+    operator: equal
+    expected: 1
+    actual:   2
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:12:5)
+  ...
+not ok 5 should not be here
+  ---
+    operator: fail
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:13:5)
+  ...
+# single-tests #3 mix of fail/pass
+ok 6 Should be okay
+ok 7 should be equal
+not ok 8 should be equal
+  ---
+    operator: equal
+    expected: 1
+    actual:   2
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:21:5)
+  ...
+
+1..8
+# tests 8
+# pass  4
+# fail  4

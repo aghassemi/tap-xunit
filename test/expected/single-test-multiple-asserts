@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="single-test-mutiple-asserts" tests="4" failures="1" errors="0">
+    <testcase name="#1 Should be okay"/>
+    <testcase name="#2 should be equal"/>
+    <testcase name="#3 Oh no!">
+      <failure>
+          ---
+            operator: fail
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:6:5)
+          ...
+      </failure>
+    </testcase>
+    <testcase name="#4 Oh yeah!"/>
+  </testsuite>
+</testsuites>

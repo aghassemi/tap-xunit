@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="escape" tests="6" failures="3" errors="0">
+    <testcase name="#1 1..2"/>
+    <testcase name="#2 Error: 1..2">
+      <failure>
+          ---
+            operator: error
+            expected: undefined
+            actual:   {}
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:5:5)
+            stack:
+              Error: 1..2
+                at Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:5:11)
+                at Test.bound [as _cb] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+                at Test.run (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:72:10)
+                at Test.bound [as run] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+                at Object.next [as _onImmediate] (/Users/aghassemi/github/tape/node_modules/tape/lib/results.js:66:15)
+                at processImmediate [as _immediateCallback] (timers.js:330:15)
+          ...
+      </failure>
+    </testcase>
+    <testcase name="#3 # NotAComment"/>
+    <testcase name="#4 Error: # NotAComment">
+      <failure>
+          ---
+            operator: error
+            expected: undefined
+            actual:   {}
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:8:5)
+            stack:
+              Error: # NotAComment
+                at Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:8:11)
+                at Test.bound [as _cb] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+                at Test.run (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:72:10)
+                at Test.bound [as run] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+                at Object.next [as _onImmediate] (/Users/aghassemi/github/tape/node_modules/tape/lib/results.js:66:15)
+                at processImmediate [as _immediateCallback] (timers.js:330:15)
+          ...
+      </failure>
+    </testcase>
+    <testcase name="#5 -- Not Extra ..."/>
+    <testcase name="#6 Error: --- Not Extra ...">
+      <failure>
+          ---
+            operator: error
+            expected: undefined
+            actual:   {}
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:11:5)
+            stack:
+              Error:
+            ---
+             Not Extra
+            ...
+                at Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:11:11)
+                at Test.bound [as _cb] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+                at Test.run (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:72:10)
+                at Test.bound [as run] (/Users/aghassemi/github/tape/node_modules/tape/lib/test.js:59:32)
+                at Object.next [as _onImmediate] (/Users/aghassemi/github/tape/node_modules/tape/lib/results.js:66:15)
+                at processImmediate [as _immediateCallback] (timers.js:330:15)
+          ...
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>

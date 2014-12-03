@@ -1,0 +1,20 @@
+TAP version 13
+# unicode
+ok 1 Երկինքը կապույտ
+not ok 2 天空是蓝色的
+  ---
+    operator: fail
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:5:5)
+  ...
+ok 3 ουρανός είναι μπλε
+not ok 4 آسمان آبی است
+  ---
+    operator: fail
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:7:5)
+  ...
+ok 5 <>~!@#$%^&*()_+<>?:"{},./;'[]=-)װױײ׳״ˀˁ˂˃˄˅ˆˇˈˉ     
+
+1..5
+# tests 5
+# pass  3
+# fail  2

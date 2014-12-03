@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="unicode" tests="5" failures="2" errors="0">
+    <testcase name="#1 Երկինքը կապույտ"/>
+    <testcase name="#2 天空是蓝色的">
+      <failure>
+          ---
+            operator: fail
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:5:5)
+          ...
+      </failure>
+    </testcase>
+    <testcase name="#3 ουρανός είναι μπλε"/>
+    <testcase name="#4 آسمان آبی است">
+      <failure>
+          ---
+            operator: fail
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:7:5)
+          ...
+      </failure>
+    </testcase>
+    <testcase name="#5 &lt;>~!@#$%^&amp;*()_+&lt;>?:&quot;{},./;'[]=-)װױײ׳״ˀˁ˂˃˄˅ˆˇˈˉ     "/>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="single-tests #1 all pass" tests="2" failures="0" errors="0">
+    <testcase name="#1 True that"/>
+    <testcase name="#2 foo() == bar()"/>
+  </testsuite>
+  <testsuite name="single-tests #2 all fail" tests="3" failures="3" errors="0">
+    <testcase name="#3 True that">
+      <failure>
+          ---
+            operator: notOk
+            expected: false
+            actual:   true
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:11:5)
+          ...
+      </failure>
+    </testcase>
+    <testcase name="#4 should be equal">
+      <failure>
+          ---
+            operator: equal
+            expected: 1
+            actual:   2
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:12:5)
+          ...
+      </failure>
+    </testcase>
+    <testcase name="#5 should not be here">
+      <failure>
+          ---
+            operator: fail
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:13:5)
+          ...
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="single-tests #3 mix of fail/pass" tests="3" failures="1" errors="0">
+    <testcase name="#6 Should be okay"/>
+    <testcase name="#7 should be equal"/>
+    <testcase name="#8 should be equal">
+      <failure>
+          ---
+            operator: equal
+            expected: 1
+            actual:   2
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:21:5)
+          ...
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>
