@@ -44,30 +44,28 @@ tapInputStream.pipe(tapToxUnitConverter).pipe(xUnitOutStream);
 ## Options
 Options can be passed as CLI arguments by being prefixed with ```--```
 
-```
-name: dontUseCommentsAsTestNames
-default: false
+#### dontUseCommentsAsTestNames
+*default*: ```false```
 
 By default TAP comments are used as test-suite names and considered to mark test boundaries.
 This option can be used to turn that feature off, in which case comments are ignored and
-all assertions go inside a single *<testsuite name="Default">* with name *Default*
-```
+all assertions go inside a single ```<testsuite name="Default">``` with name ```Default```
 
-```
-name: replaceWithUnicodeDot
-default: false
+
+
+#### replaceWithUnicodeDot
+*default*: ```false```
 
 Whether . in test-suite names should be replaced with a Unicode homoglyph
 This feature exist because many xUnit reporters assume . in test-suite name implies package hierarchy, which may not be the case.
-```
 
-```
-name: package
-default: ''
+
+#### package
+*default*: ```''```
 
 If specified, all test-suites will be prefixed with the given package name.
-NOTE: replaceWithUnicodeDot option does not apply to package and . can be used to specify package hierarchy.
-```
+NOTE: ```replaceWithUnicodeDot``` option does not apply to package and . can be used to specify package hierarchy.
+
 
 #License
 MIT
