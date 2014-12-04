@@ -42,3 +42,6 @@ var tapToxUnitConverter = converter(opts);
 
 tapInputStream.pipe(tapToxUnitConverter).pipe(xUnitOutStream);
 ```
+
+#License
+MIT
