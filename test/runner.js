@@ -62,7 +62,7 @@ function runBadInputTests() {
     test('parse error: ' + filename, function(assert) {
       var badInputFilePath = path.join(BAD_INPUT_DIR, filename);
       var inputStream = fs.createReadStream(badInputFilePath, FILE_READ_OPTS);
-      var tapToxUnitConverter = converter();
+      var tapToxUnitConverter = converter({strict:true});
       var xUnitStream = inputStream.pipe(tapToxUnitConverter);
       var numParseErrors = 0;
       xUnitStream.on('error', function(err) {
