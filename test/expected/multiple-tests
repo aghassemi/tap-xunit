@@ -10,7 +10,7 @@
           ---
             operator: notOk
             expected: false
-            actual:   true
+            actual: true
             at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:11:5)
           ...
       </failure>
@@ -20,7 +20,7 @@
           ---
             operator: equal
             expected: 1
-            actual:   2
+            actual: 2
             at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:12:5)
           ...
       </failure>
@@ -42,7 +42,7 @@
           ---
             operator: equal
             expected: 1
-            actual:   2
+            actual: 2
             at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:21:5)
           ...
       </failure>

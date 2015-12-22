@@ -1,0 +1,22 @@
+TAP version 13
+1..12
+ok 1 - /Users/nkbt/github/npm-http-server/modules/__tests__/getProperty-test.js
+ok 2 - /Users/nkbt/github/npm-http-server/modules/__tests__/parsePackageURL-test.js
+ok 3 - /Users/nkbt/github/npm-http-server/modules/createPackageURL.js
+ok 4 - /Users/nkbt/github/npm-http-server/modules/getMaxAge.js
+ok 5 - /Users/nkbt/github/npm-http-server/modules/getPackage.js
+ok 6 - /Users/nkbt/github/npm-http-server/modules/getPackageInfo.js
+ok 7 - /Users/nkbt/github/npm-http-server/modules/getProperty.js
+ok 8 - /Users/nkbt/github/npm-http-server/modules/parsePackageURL.js
+not ok 9 - /Users/nkbt/github/npm-http-server/modules/resolveFile.js
+  ---
+  message: Unnecessary semicolon.
+  severity: error
+  data:
+    line: 24
+    column: 2
+    ruleId: no-extra-semi
+  ...
+ok 10 - /Users/nkbt/github/npm-http-server/modules/ResponseUtils.js
+ok 11 - /Users/nkbt/github/npm-http-server/modules/serveNPMPackageFile.js
+ok 12 - /Users/nkbt/github/npm-http-server/server.js

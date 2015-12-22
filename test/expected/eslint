@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="Default">
+    <testcase name="#1 /Users/nkbt/github/npm-http-server/modules/__tests__/getProperty-test.js"/>
+    <testcase name="#2 /Users/nkbt/github/npm-http-server/modules/__tests__/parsePackageURL-test.js"/>
+    <testcase name="#3 /Users/nkbt/github/npm-http-server/modules/createPackageURL.js"/>
+    <testcase name="#4 /Users/nkbt/github/npm-http-server/modules/getMaxAge.js"/>
+    <testcase name="#5 /Users/nkbt/github/npm-http-server/modules/getPackage.js"/>
+    <testcase name="#6 /Users/nkbt/github/npm-http-server/modules/getPackageInfo.js"/>
+    <testcase name="#7 /Users/nkbt/github/npm-http-server/modules/getProperty.js"/>
+    <testcase name="#8 /Users/nkbt/github/npm-http-server/modules/parsePackageURL.js"/>
+    <testcase name="#9 /Users/nkbt/github/npm-http-server/modules/resolveFile.js">
+      <failure>
+          ---
+            message: Unnecessary semicolon.
+            severity: error
+            data: {"line":24,"column":2,"ruleId":"no-extra-semi"}
+          ...
+      </failure>
+    </testcase>
+    <testcase name="#10 /Users/nkbt/github/npm-http-server/modules/ResponseUtils.js"/>
+    <testcase name="#11 /Users/nkbt/github/npm-http-server/modules/serveNPMPackageFile.js"/>
+    <testcase name="#12 /Users/nkbt/github/npm-http-server/server.js"/>
+  </testsuite>
+</testsuites>

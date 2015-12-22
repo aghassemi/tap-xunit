@@ -7,7 +7,7 @@
           ---
             operator: error
             expected: undefined
-            actual:   {}
+            actual: {}
             at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:5:5)
           ...
       </failure>
@@ -18,7 +18,7 @@
           ---
             operator: error
             expected: undefined
-            actual:   {}
+            actual: {}
             at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:8:5)
           ...
       </failure>
@@ -29,7 +29,7 @@
           ---
             operator: error
             expected: undefined
-            actual:   {}
+            actual: {}
             at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:11:5)
           ...
       </failure>

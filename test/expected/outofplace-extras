@@ -11,7 +11,7 @@
           ---
             operator: ok
             expected: true
-            actual:   false
+            actual: false
             at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:6:5)
           ...
       </failure>
