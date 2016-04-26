@@ -3,9 +3,9 @@
   "version": "1.3.1",
   "description": "TAP to xUnit XML converter.",
   "main": "lib/converter.js",
-  "bin" : {
-    "tap-xunit" : "./bin/tap-xunit",
-    "txunit" : "./bin/tap-xunit"
+  "bin": {
+    "tap-xunit": "./bin/tap-xunit",
+    "txunit": "./bin/tap-xunit"
   },
   "scripts": {
     "test": "node test/runner.js"
@@ -34,11 +34,12 @@
     "concat-stream": "~1.5.1"
   },
   "dependencies": {
+    "duplexer": "~0.1.1",
+    "minimist": "~1.2.0",
+    "strip-ansi": "^3.0.1",
+    "tap-parser": "~1.2.2",
     "through2": "~2.0.0",
     "xmlbuilder": "~4.1.0",
-    "duplexer": "~0.1.1",
-    "tap-parser": "~1.2.2",
-    "xtend": "~4.0.0",
-    "minimist": "~1.2.0"
+    "xtend": "~4.0.0"
   }
 }

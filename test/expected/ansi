@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="test1 › this is ta thing" tests="1" failures="0" errors="0">
+    <testcase name="#1 test1 › this is ta thing"/>
+  </testsuite>
+  <testsuite name="test2 › this is ta thing" tests="1" failures="0" errors="0">
+    <testcase name="#2 test2 › this is ta thing"/>
+  </testsuite>
+</testsuites>

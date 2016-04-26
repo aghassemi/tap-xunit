@@ -1,0 +1,11 @@
+TAP version 13
+# test1 [90m[2m›[22m[39m this is ta thing
+ok 1 - test1 [90m[2m›[22m[39m this is ta thing
+# test2 [90m[2m›[22m[39m this is ta thing
+ok 2 - test2 [90m[2m›[22m[39m this is ta thing
+
+1..2
+# tests 2
+# pass 2
+# fail 0
+
