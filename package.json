@@ -1,6 +1,6 @@
 {
   "name": "tap-xunit",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "TAP to xUnit XML converter.",
   "main": "lib/converter.js",
   "bin" : {
