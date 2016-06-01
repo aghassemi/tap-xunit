@@ -8,12 +8,13 @@ var FILE_READ_OPTS = {
   encoding: 'utf-8'
 };
 
-runGoodInputTests(); // input.pipe(xUnitConverter) == expected output
+runGoodInputTests('pass', 0); // input.pipe(xUnitConverter) == expected output
+runGoodInputTests('fail', 1);
 runBadInputTests(); // input.pipe(xUnitConverter) == parse error
 
-function runGoodInputTests() {
-  var INPUT_DIR = 'test/input';
-  var EXPECTED_DIR = 'test/expected';
+function runGoodInputTests(subdir, exitCode) {
+  var INPUT_DIR = 'test/input/' + subdir;
+  var EXPECTED_DIR = 'test/expected/' + subdir;
 
   // tape does not support adding test() async, so we need to read the dir sync
   var testFiles = fs.readdirSync(INPUT_DIR);
@@ -37,6 +38,7 @@ function runGoodInputTests() {
         output = output.toString();
         assert.deepEqual(output.trim(), expected.trim(), 'input/output match');
         assert.end();
+        assert.equals(exitCode, tapToxUnitConverter.exitCode, 'exitCode match');
       }
     });
   }

@@ -5,3 +5,8 @@ var converter = require('../lib/converter.js');
 
 var tapToxUnitConverter = converter(argv);
 process.stdin.pipe(tapToxUnitConverter).pipe(process.stdout);
+process.on('exit', function (code) {
+    if (code === 0 && tapToxUnitConverter.exitCode !== 0) {
+        process.exit(tapToxUnitConverter.exitCode);
+    }
+});
