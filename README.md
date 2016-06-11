@@ -51,14 +51,11 @@ By default TAP comments are used as test-suite names and considered to mark test
 This option can be used to turn that feature off, in which case comments are ignored and
 all assertions go inside a single ```<testsuite name="Default">``` with name ```Default```
 
-
-
 #### replaceWithUnicodeDot
 *default*: ```false```
 
-Whether . in test-suite names should be replaced with a Unicode homoglyph
-This feature exist because many xUnit reporters assume . in test-suite name implies package hierarchy, which may not be the case.
-
+Whether the '.' in test-suite names should be replaced with a Unicode homoglyph.
+This feature exists because many xUnit reporters assume '.' in test-suite name implies package hierarchy, which may not be the case.
 
 #### package
 *default*: ```''```
