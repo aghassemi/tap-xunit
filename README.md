@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/aghassemi/tap-xunit.png)](https://travis-ci.org/aghassemi/tap-xunit)
+[![Issue Stats](http://issuestats.com/github/aghassemi/tap-xunit/badge/pr)](http://issuestats.com/github/aghassemi/tap-xunit)
+[![Issue Stats](http://issuestats.com/github/aghassemi/tap-xunit/badge/issue)](http://issuestats.com/github/aghassemi/tap-xunit)
 tap-xunit
 =========
 
