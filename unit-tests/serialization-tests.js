@@ -33,6 +33,22 @@ const xml2js = require('xml2js');
         }
     },
     {
+        name: 'failed assert',
+        input: {
+            extra: [],
+            asserts: [ { skip: false, id: 3, ok: false, name: 'should be equal' } ]
+        },
+        expected: {
+            '$': { tests: '1', failures: '1', skipped: '0' },
+            testcase: [
+                {
+                    '$': { name: '#3 should be equal' },
+                    failure: ['']
+                }
+            ]
+        }
+    },
+    {
         name: 'stdout logs',
         input: {
           extra: [ 'see me\n', 'me too\n' ],
@@ -54,7 +70,6 @@ const xml2js = require('xml2js');
     test('serializes: ' + testCase.name, assert => {
         var asserts = [testCase.input];
         var xml = xml2js.parseString(serialize(asserts), (err, parsed) => {
-            console.dir(parsed, {depth: null});
             var expected = {
                 testsuites: {
                     testsuite: [testCase.expected]
@@ -83,6 +98,9 @@ function serialize (testCases) {
         });
         if(a.skip) {
             testCaseElement.ele('skipped');
+        }
+        if(!a.ok) {
+            testCaseElement.ele('failure');
         }
       });
       suite.extra.forEach(e => {
