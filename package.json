@@ -3,12 +3,12 @@
   "version": "1.4.0",
   "description": "TAP to xUnit XML converter.",
   "main": "lib/converter.js",
-  "bin" : {
-    "tap-xunit" : "./bin/tap-xunit",
-    "txunit" : "./bin/tap-xunit"
+  "bin": {
+    "tap-xunit": "./bin/tap-xunit",
+    "txunit": "./bin/tap-xunit"
   },
   "scripts": {
-    "test": "node test/runner.js"
+    "test": "node test/runner.js && tape unit-tests/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -30,8 +30,9 @@
   },
   "homepage": "https://github.com/aghassemi/tap-xunit",
   "devDependencies": {
+    "concat-stream": "~1.5.1",
     "tape": "~4.2.2",
-    "concat-stream": "~1.5.1"
+    "xml2js": "^0.4.17"
   },
   "dependencies": {
     "through2": "~2.0.0",
