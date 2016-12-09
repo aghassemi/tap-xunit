@@ -49,6 +49,28 @@ const xml2js = require('xml2js');
         }
     },
     {
+        name: 'failed assert with diag',
+        input: {
+            extra: [],
+            asserts: [ {
+                skip: false, id: 3, ok: false, name: 'should be equal',
+                diag: {
+                    operator: 'fail',
+                    at: 'Test'
+                }
+            } ]
+        },
+        expected: {
+            '$': { tests: '1', failures: '1', skipped: '0' },
+            testcase: [
+                {
+                    '$': { name: '#3 should be equal' },
+                    failure: ['\n          ---\n            operator: fail\n            at: Test\n          ...\n      ']
+                }
+            ]
+        }
+    },
+    {
         name: 'stdout logs',
         input: {
           extra: [ 'see me\n', 'me too\n' ],
@@ -100,7 +122,10 @@ function serialize (testCases) {
             testCaseElement.ele('skipped');
         }
         if(!a.ok) {
-            testCaseElement.ele('failure');
+            const failureElement = testCaseElement.ele('failure');
+            if(a.diag) {
+              failureElement.txt(formatFailure(a.diag));
+            }
         }
       });
       suite.extra.forEach(e => {
@@ -114,3 +139,17 @@ function serialize (testCases) {
   });
 }
 
+function formatFailure(diag) {
+  var text = '\n          ---\n';
+
+  for(var key in diag) {
+    if(diag.hasOwnProperty(key) && diag[key] !== undefined) {
+      var value = diag[key];
+      text += '            '+key+': ' + (typeof value === 'object' ? JSON.stringify(value) : value) + '\n';
+    }
+  }
+
+  text += '          ...\n      ';
+
+  return text;
+}
