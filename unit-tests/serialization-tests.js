@@ -6,11 +6,11 @@ const serialize = require('../lib/serialize');
 [
     {
         name: 'Single assert',
-        input: {
+        input: [{
             extra: [],
             asserts: [ { ok: true, id: 3, name: 'should be equal' } ],
             testName: 'hello test'
-        },
+        }],
         expected: {
             testsuites: {
                 testsuite: [{
@@ -24,10 +24,10 @@ const serialize = require('../lib/serialize');
     },
     {
         name: 'skipped assert',
-        input: {
+        input: [{
             extra: [],
             asserts: [ { skip: true, id: 3, ok: 'true', name: 'should be equal' } ]
-        },
+        }],
         expected: {
             testsuites: {
                 testsuite: [{
@@ -44,10 +44,10 @@ const serialize = require('../lib/serialize');
     },
     {
         name: 'failed assert',
-        input: {
+        input: [{
             extra: [],
             asserts: [ { skip: false, id: 3, ok: false, name: 'should be equal' } ]
-        },
+        }],
         expected: {
             testsuites: {
                 testsuite: [{
@@ -64,7 +64,7 @@ const serialize = require('../lib/serialize');
     },
     {
         name: 'failed assert with diag',
-        input: {
+        input: [{
             extra: [],
             asserts: [ {
                 skip: false, id: 3, ok: false, name: 'should be equal',
@@ -73,7 +73,7 @@ const serialize = require('../lib/serialize');
                     at: 'Test'
                 }
             } ]
-        },
+        }],
         expected: {
             testsuites: {
                 testsuite: [{
@@ -91,13 +91,13 @@ const serialize = require('../lib/serialize');
     },
     {
         name: 'stdout logs',
-        input: {
+        input: [{
           extra: [ 'see me\n', 'me too\n' ],
           asserts: [
               { ok: true, id: 1, name: 'should be equal' },
               { ok: true, id: 2, name: 'should be equal' }
           ]
-        },
+        }],
         expected: {
             testsuites: {
                 testsuite: [{
@@ -113,8 +113,8 @@ const serialize = require('../lib/serialize');
     }
 ].forEach(testCase => {
     test('serializes: ' + testCase.name, assert => {
-        var asserts = [testCase.input];
-        var xml = xml2js.parseString(serialize(asserts), (err, parsed) => {
+        var testSuites = testCase.input;
+        var xml = xml2js.parseString(serialize(testSuites), (err, parsed) => {
             var expected = testCase.expected;
             console.log('EXPECTED');
             console.dir(expected, {depth: null});
