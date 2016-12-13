@@ -114,9 +114,9 @@ var serialize = require('../lib/serialize');
         }
     }
 ].forEach(function(testCase) {
-    test('serializes: ' + testCase.name, assert => {
+    test('serializes: ' + testCase.name, function (assert) {
         var testSuites = testCase.input;
-        var xml = xml2js.parseString(serialize(testSuites), (err, parsed) => {
+        var xml = xml2js.parseString(serialize(testSuites), function(err, parsed) {
             var expected = testCase.expected;
             console.log('EXPECTED');
             console.dir(expected, {depth: null});
