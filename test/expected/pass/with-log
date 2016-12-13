@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="single pass" tests="1" failures="0" errors="0">
+  <testsuite name="console logs" tests="1" failures="0" errors="0">
     <testcase name="#1 should be equal">
-        <sysout>hi there</sysout>
+        <sysout>hi there&#10;</sysout>
     </testcase>
   </testsuite>
 </testsuites>
