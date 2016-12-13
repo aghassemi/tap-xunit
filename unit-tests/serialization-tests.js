@@ -104,9 +104,11 @@ const serialize = require('../lib/serialize');
                     '$': { tests: '2', failures: '0', name: '', errors: '0' },
                     testcase: [
                         { '$': { name: '#1 should be equal' } },
-                        { '$': { name: '#2 should be equal' } },
+                        {
+                            '$': { name: '#2 should be equal' },
+                            sysout: [ 'see me\n', 'me too\n' ]
+                        },
                     ],
-                    sysout: [ 'see me\n', 'me too\n' ]
                 }]
             }
         }
