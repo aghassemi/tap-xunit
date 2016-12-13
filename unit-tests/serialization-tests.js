@@ -1,7 +1,7 @@
-const test = require('tape');
-const xmlbuilder = require('xmlbuilder');
-const xml2js = require('xml2js');
-const serialize = require('../lib/serialize');
+var test = require('tape');
+var xmlbuilder = require('xmlbuilder');
+var xml2js = require('xml2js');
+var serialize = require('../lib/serialize');
 
 [
     {
@@ -113,7 +113,7 @@ const serialize = require('../lib/serialize');
             }
         }
     }
-].forEach(testCase => {
+].forEach(function(testCase) {
     test('serializes: ' + testCase.name, assert => {
         var testSuites = testCase.input;
         var xml = xml2js.parseString(serialize(testSuites), (err, parsed) => {
