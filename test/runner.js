@@ -3,6 +3,7 @@ var path = require('path');
 var test = require('tape');
 var concat = require('concat-stream');
 var converter = require('../lib/converter.js');
+var xml2js = require('xml2js');
 
 var FILE_READ_OPTS = {
   encoding: 'utf-8'
@@ -36,9 +37,16 @@ function runGoodInputTests(subdir, exitCode) {
 
       function verifyResults(output) {
         output = output.toString();
-        assert.deepEqual(output.trim(), expected.trim(), 'input/output match');
-        assert.end();
-        assert.equals(exitCode, tapToxUnitConverter.exitCode, 'exitCode match');
+        xml2js.parseString(output, function (err, parsedOutput) {
+            console.log('EXPECTED');
+            console.dir(expected, {depth: null});
+            console.log('ACTUAL');
+            console.dir(parsedOutput, {depth: null});
+            assert.deepEqual(parsedOutput, expected, 'input/output match');
+            assert.end();
+            assert.equals(exitCode,
+                tapToxUnitConverter.exitCode, 'exitCode match');
+        });
       }
     });
   }
@@ -50,7 +58,9 @@ function runGoodInputTests(subdir, exitCode) {
     var inputStream = fs.createReadStream(inputFilePath, FILE_READ_OPTS);
     fs.readFile(expectedFilePath, FILE_READ_OPTS, function(err, output) {
       if (err) throw err;
-      cb(inputStream, output);
+      xml2js.parseString(output, function (err, parsed) {
+          cb(inputStream, parsed);
+      });
     });
   }
 }
