@@ -112,6 +112,30 @@ var serialize = require('../lib/serialize');
                 }]
             }
         }
+    },
+    {
+        name: 'removes null characters from log',
+        input: [{
+          extra: [ '\u0000' ],
+          asserts: [
+              { ok: true, id: 1, name: 'should be equal' },
+              { ok: true, id: 2, name: 'should be equal' }
+          ]
+        }],
+        expected: {
+            testsuites: {
+                testsuite: [{
+                    '$': { tests: '2', failures: '0', name: '', errors: '0' },
+                    testcase: [
+                        { '$': { name: '#1 should be equal' } },
+                        {
+                            '$': { name: '#2 should be equal' },
+                            'system-out': [ '' ]
+                        },
+                    ],
+                }]
+            }
+        }
     }
 ].forEach(function(testCase) {
     test('serializes: ' + testCase.name, function (assert) {
