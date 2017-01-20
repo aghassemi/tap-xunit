@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="withtodo" tests="4" failures="1" skipped="2" errors="0">
+    <testcase name="#1 passing and not todo"/>
+    <testcase name="#2 passing with todo">
+      <skipped/>
+    </testcase>
+    <testcase name="#3 failing with todo">
+      <skipped/>
+    </testcase>
+    <testcase name="#4 failing and not todo">
+      <failure>
+          ---
+            operator: ok
+            expected: true
+            actual: false
+            at: Test.&lt;anonymous&gt; (/Users/aghassemi/github/tape/test.js:7:5)
+          ...
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>
