@@ -1,0 +1,22 @@
+TAP version 13
+# passing-with-skip-todo
+ok 1 passing
+not ok 2 failing but skipped # SKIP
+  ---
+    operator: ok
+    expected: true
+    actual:   false
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:6:5)
+  ...
+not ok 3 failing but todo # TODO
+  ---
+    operator: ok
+    expected: true
+    actual:   false
+    at: Test.<anonymous> (/Users/aghassemi/github/tape/test.js:7:5)
+  ...
+
+1..3
+# tests 3
+# pass  1
+# fail  2
