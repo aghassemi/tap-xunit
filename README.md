@@ -66,5 +66,5 @@ If specified, all test-suites will be prefixed with the given package name.
 NOTE: ```replaceWithUnicodeDot``` option does not apply to package and . can be used to specify package hierarchy.
 
 
-#License
+#icense
 MIT
