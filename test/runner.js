@@ -9,9 +9,9 @@ var FILE_READ_OPTS = {
   encoding: 'utf-8'
 };
 
-runGoodInputTests('pass', 0); // input.pipe(xUnitConverter) == expected output
-runGoodInputTests('fail', 1);
-runBadInputTests(); // input.pipe(xUnitConverter) == parse error
+ runGoodInputTests('pass', 0); // input.pipe(xUnitConverter) == expected output
+ runGoodInputTests('fail', 1);
+ runBadInputTests(); // input.pipe(xUnitConverter) == parse error
 
 function runGoodInputTests(subdir, exitCode) {
   var INPUT_DIR = 'test/input/' + subdir;
@@ -74,15 +74,10 @@ function runBadInputTests() {
     test('parse error: ' + filename, function(assert) {
       var badInputFilePath = path.join(BAD_INPUT_DIR, filename);
       var inputStream = fs.createReadStream(badInputFilePath, FILE_READ_OPTS);
-      var tapToxUnitConverter = converter({strict:true});
+      var tapToxUnitConverter = converter();
       var xUnitStream = inputStream.pipe(tapToxUnitConverter);
       var numParseErrors = 0;
-      xUnitStream.on('error', function(err) {
-        assert.ok(err, err.message);
-        numParseErrors++;
-      });
       xUnitStream.on('end', function() {
-        assert.ok(numParseErrors > 0, 'had ' + numParseErrors + ' parse errors');
         assert.equals(tapToxUnitConverter.exitCode, 1, 'exitCode match');
         assert.end();
       });
