@@ -1,0 +1,9 @@
+Error: beep
+    at [eval]:1:7
+    at ContextifyScript.Script.runInThisContext (vm.js:50:33)
+    at Object.runInThisContext (vm.js:139:38)
+    at Object.<anonymous> ([eval]-wrapper:6:22)
+    at Module._compile (module.js:635:30)
+    at evalScript (bootstrap_node.js:462:27)
+    at startup (bootstrap_node.js:163:9)
+    at bootstrap_node.js:608:3

@@ -83,6 +83,7 @@ function runBadInputTests() {
       });
       xUnitStream.on('end', function() {
         assert.ok(numParseErrors > 0, 'had ' + numParseErrors + ' parse errors');
+        assert.equals(tapToxUnitConverter.exitCode, 1, 'exitCode match');
         assert.end();
       });
     });
