@@ -69,8 +69,7 @@ function runBadInputTests() {
   var BAD_INPUT_DIR = 'test/bad';
 
   var testFiles = fs.readdirSync(BAD_INPUT_DIR);
-  for (var i = 0; i < testFiles.length; i++) {
-    var filename = testFiles[i];
+  testFiles.forEach(function(filename) {
     test('parse error: ' + filename, function(assert) {
       var badInputFilePath = path.join(BAD_INPUT_DIR, filename);
       var inputStream = fs.createReadStream(badInputFilePath, FILE_READ_OPTS);
@@ -82,5 +81,5 @@ function runBadInputTests() {
         assert.end();
       });
     });
-  }
+  });
 }
