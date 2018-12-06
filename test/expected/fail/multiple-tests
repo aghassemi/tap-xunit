@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testsuites>
+<testsuites time="0.00">
   <testsuite name="single-tests #1 all pass" tests="2" failures="0" errors="0">
     <testcase name="#1 True that"/>
     <testcase name="#2 foo() == bar()"/>

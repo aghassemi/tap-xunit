@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<testsuites>
+<testsuites time="0.00">
   <testsuite name="skipped" tests="4" failures="1" skipped="2" errors="0">
     <testcase name="#1 passing and not skipped"/>
     <testcase name="#2 passing but skipped">
