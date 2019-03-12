@@ -1,0 +1,9 @@
+TAP version 13
+# non-xml-text
+ok 1 contains vertical tab here "␋" and here ""
+
+1..1
+# tests 1
+# pass  1
+
+# ok
