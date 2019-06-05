@@ -3,7 +3,10 @@ var sanitizeString = require('../lib/sanitize-string');
 
 [
     '\u0000',
-    '\u0001'
+    '\u0001',
+    '\u000B',
+    '\uD800',
+    '\uFDD0',
 ].forEach(function(invalidCharacter){
     test(
         'it strips the invalid character:' + invalidCharacter.charCodeAt(0),
@@ -16,6 +19,7 @@ var sanitizeString = require('../lib/sanitize-string');
 
 [
     '\u000A',
+    '\u000D',
 ].forEach(function(validCharacter){
     test(
         'it doesn\'t strip the valid character:' + validCharacter.charCodeAt(0),

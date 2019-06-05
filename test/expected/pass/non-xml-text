@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="non-xml-text" tests="1" failures="0" errors="0">
+    <testcase name="#1 contains vertical tab here &quot;&#x240B;&quot; and here &quot;&quot;"/>
+  </testsuite>
+</testsuites>
