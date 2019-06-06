@@ -12,7 +12,7 @@ var serialize = require('../lib/serialize');
             testName: 'hello test'
         }],
         expected: {
-            testsuites: {
+            testsuites: { '$': { time: '0.00' },
                 testsuite: [{
                     '$': { name: 'hello test', tests: '1', failures: '0', errors: '0' },
                     testcase: [
@@ -29,7 +29,7 @@ var serialize = require('../lib/serialize');
             asserts: [ { skip: true, id: 3, ok: 'true', name: 'should be equal' } ]
         }],
         expected: {
-            testsuites: {
+            testsuites: { '$': { time: '0.00' },
                 testsuite: [{
                     '$': { tests: '1', failures: '0', skipped: '1', name: '', errors: '0' },
                     testcase: [
@@ -49,7 +49,7 @@ var serialize = require('../lib/serialize');
             asserts: [ { skip: false, id: 3, ok: false, name: 'should be equal' } ]
         }],
         expected: {
-            testsuites: {
+            testsuites: { '$': { time: '0.00' },
                 testsuite: [{
                     '$': { tests: '1', failures: '1', name: '', errors: '0' },
                     testcase: [
@@ -75,7 +75,7 @@ var serialize = require('../lib/serialize');
             } ]
         }],
         expected: {
-            testsuites: {
+            testsuites: { '$': { time: '0.00' },
                 testsuite: [{
                     '$': { tests: '1', failures: '1', name: '', errors: '0' },
                     testcase: [
@@ -99,7 +99,7 @@ var serialize = require('../lib/serialize');
           ]
         }],
         expected: {
-            testsuites: {
+            testsuites: { '$': { time: '0.00' },
                 testsuite: [{
                     '$': { tests: '2', failures: '0', name: '', errors: '0' },
                     testcase: [
@@ -123,7 +123,7 @@ var serialize = require('../lib/serialize');
           ]
         }],
         expected: {
-            testsuites: {
+            testsuites: { '$': { time: '0.00' },
                 testsuite: [{
                     '$': { tests: '2', failures: '0', name: '', errors: '0' },
                     testcase: [
@@ -140,7 +140,7 @@ var serialize = require('../lib/serialize');
 ].forEach(function(testCase) {
     test('serializes: ' + testCase.name, function (assert) {
         var testSuites = testCase.input;
-        var xml = xml2js.parseString(serialize(testSuites), function(err, parsed) {
+        var xml = xml2js.parseString(serialize(testSuites, '0.00'), function(err, parsed) {
             var expected = testCase.expected;
             console.log('EXPECTED');
             console.dir(expected, {depth: null});

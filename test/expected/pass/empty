@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
-<testsuites>
+<testsuites time="0.00">
   <testsuite name="empty" tests="0" failures="0" errors="0"/>
 </testsuites>
