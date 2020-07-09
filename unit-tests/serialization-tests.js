@@ -106,7 +106,7 @@ var serialize = require('../lib/serialize');
                         { '$': { name: '#1 should be equal' } },
                         {
                             '$': { name: '#2 should be equal' },
-                            'system-out': [ 'see me\n', 'me too\n' ]
+                            'system-out': [ 'see me\nme too\n' ]
                         },
                     ],
                 }]
