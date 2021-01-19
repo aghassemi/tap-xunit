@@ -29,10 +29,7 @@ less results.tap | tap-xunit --package="MyCompany.MyTool" > results.xml
 
 ```
 
-By default TAP comments are used as test-suite names and considered to mark test boundaries.
-Without the feature all assertions go inside a single ```<testsuite name="Default">``` with name ```Default```
-Alternatively with CLI flag ```--oneAssertionPerTestcase``` comments are concatenated and included as ```<system-output/>```.
-Or with flag ```--dontUseCommentsAsTestNames``` the test-suite names feature is turned off, and comments are ignored.
+By default TAP comments are used as test-suite names and considered to mark test boundaries. Without the feature all assertions go inside a single ```<testsuite name="Default">``` with name ```Default``` Alternatively with CLI flag ```--oneAssertionPerTestcase``` comments are concatenated and included as ```<system-output/>```. Or with flag ```--dontUseCommentsAsTestNames``` the test-suite names feature is turned off, and comments are ignored. Because not all publishers pick up on ```<system-output/>``` alternatively ```--outputAsFailure``` moves the comments to the ```<failure/>``` element but only if no diagnostic data objects are given.
 
 ## Library
 ```
@@ -67,6 +64,15 @@ This feature exists because many xUnit reporters assume '.' in test-suite name i
 If specified, all test-suites will be prefixed with the given package name.
 NOTE: ```replaceWithUnicodeDot``` option does not apply to package and . can be used to specify package hierarchy.
 
+#### oneAssertionPerTestcase
+*default*: false
+
+Overrides dontUseCommentsAsTestNames, always group comments with assertion before and output in ```<system-output/>```
+
+#### outputAsFailure
+*default*: false
+
+Change behaviour for oneAssertionPerTestcase to move diagnostic comments from system-output to failure. Included only if no other diagnostics are given, and only for failure results.
 
 # License
 MIT
