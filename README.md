@@ -29,8 +29,10 @@ less results.tap | tap-xunit --package="MyCompany.MyTool" > results.xml
 
 ```
 
-By default TAP comments are used as test-suite names and considered to mark test boundaries. CLI flag ```--dontUseCommentsAsTestNames``` can be used to turn that feature off, in which case comments are ignored and
-all assertions go inside a single ```<testsuite name="Default">``` with name ```Default```
+By default TAP comments are used as test-suite names and considered to mark test boundaries.
+Without the feature all assertions go inside a single ```<testsuite name="Default">``` with name ```Default```
+Alternatively with CLI flag ```--oneAssertionPerTestcase``` comments are concatenated and included as ```<system-output/>```.
+Or with flag ```--dontUseCommentsAsTestNames``` the test-suite names feature is turned off, and comments are ignored.
 
 ## Library
 ```
