@@ -14,6 +14,10 @@ node test.js | tap-xunit
 
 ![console window showing tap-xunit example](https://cloud.githubusercontent.com/assets/2099009/5288038/60d5a2da-7ae6-11e4-8d5a-5de497b4b597.jpg)
 
+## Requirements
+
+- Node.js 0.10 or higher
+
 # Installation
 
 ```
@@ -65,6 +69,61 @@ This feature exists because many xUnit reporters assume '.' in test-suite name i
 If specified, all test-suites will be prefixed with the given package name.
 NOTE: ```replaceWithUnicodeDot``` option does not apply to package and . can be used to specify package hierarchy.
 
+## Example
+
+Given the following TAP input:
+```
+TAP version 13
+# Test Suite 1
+ok 1 should pass
+not ok 2 should fail
+  ---
+    operator: fail
+    expected: true
+    actual: false
+  ...
+1..2
+```
+
+tap-xunit will convert it to the following xUnit XML:
+```xml
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite tests="2" failures="1" errors="0" name="Test Suite 1">
+    <testcase name="#1 should pass"/>
+    <testcase name="#2 should fail">
+      <failure>
+          ---
+            operator: fail
+            expected: true
+            actual: false
+          ...
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>
+```
 
 # License
 MIT
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b my-feature`
+3. Make your changes and add tests
+4. Run tests: `npm test`
+5. Commit your changes: `git commit -am 'Add feature'`
+6. Push to the branch: `git push origin my-feature`
+7. Submit a pull request
+
+## Development
+
+To set up the project for development:
+
+```bash
+git clone https://github.com/aghassemi/tap-xunit.git
+cd tap-xunit
+npm install
+npm test
+```
